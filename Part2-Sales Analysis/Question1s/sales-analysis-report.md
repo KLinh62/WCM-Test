@@ -1,124 +1,75 @@
-Welcome to the sample GitHub ReadME! Use this template as an outline for your data analytics projects. Include one ReadME per repository, with each repository storing one project. Remember, it's better to have quality over quantity - having 2 stellar business-relevant projects stands out much more than 3+ mediocre projects. Feel free to make a copy of this or fork this repository and make it your own. Happy portfolio-ing :) 
+# Sales Analysis - Summary Report
 
+## Overview
+This report summarizes key insights from the sales and margin analysis. The findings are based on a detailed review of sales trends, channel and SKU performance, margin analysis and ABC classification. Recommendations are provided for actionable business improvement.
 
+---
+## Data Structure & Initial Checks
+The dataset consist of 01 table called 'Sales_Data' with a total row count of 48,363 records. The table consists of 7 column: `shipped_date`,  `sku`,	`channel`,	`qty`,	`revenue`,	`cost of good sold`, and	`MOQ order`.
 
+The dataset can be downloaded [here](https://github.com/KLinh62/WCM-Test/tree/main/Part2-Sales%20Analysis/data).
 
-# Project Background
-Backround about the company, including the industry, active years, business model, and key business metrics. Explain this from the POV of a data analyst who is working at the company.
+The issue log of data cleaning and transformation can be found [here](https://docs.google.com/spreadsheets/d/1gzD-cnGmx3zbf4JzzgXMqsRsAYe7YhwfwTNfH3JJKGY/edit?gid=1685500588#gid=1685500588).
 
-Insights and recommendations are provided on the following key areas:
+---
+## Executive Summary
+#### Overview of Findings
 
-- **Category 1:** 
-- **Category 2:** 
-- **Category 3:** 
-- **Category 4:** 
+This analysis reveals that business performance was overwhelmingly driven by a small set of channels and products, with leading AWH and ADS channels and a small set of top SKUs contributing the majority of sales and profit. While overall margins were positive (10.64%), persistent losses in certain channels (particularly ADI) and some SKUs presented significant risk and require urgent corrective action. The clear seasonality in demand, peaking sharply in Q2 & Q4, and dipping at mid-year, underscored the importance of aligning inventory, marketing, and operational planning with these cycles to maximize growth and minimize missed opportunities. Stakeholders should focus on key channels (AWH, ADS) and key SKUs, urgently addressing sources of loss, and proactively planning for peak periods to ensure sustainable profitability.
 
-The SQL queries used to inspect and clean the data for this analysis can be found here [link].
+Below is the overview page of the Power BI dashboard. The dashboard can be viewed [here]().
 
-Targed SQL queries regarding various business questions can be found here [link].
+## Insights Deep Dive
+### 1. Overall Sales and Profitability
 
-An interactive Tableau dashboard used to report and explore sales trends can be found here [link].
-
-
-
-# Data Structure & Initial Checks
-
-The companies main database structure as seen below consists of four tables: table1, table2, table3, table4, with a total row count of X records. A description of each table is as follows:
-- **Table 2:**
-- **Table 3:**
-- **Table 4:**
-- **Table 5:**
-
-[Entity Relationship Diagram here]
-
-
-
-# Executive Summary
-
-### Overview of Findings
-
-Explain the overarching findings, trends, and themes in 2-3 sentences here. This section should address the question: "If a stakeholder were to take away 3 main insights from your project, what are the most important things they should know?" You can put yourself in the shoes of a specific stakeholder - for example, a marketing manager or finance director - to think creatively about this section.
-
-[Visualization, including a graph of overall trends or snapshot of a dashboard]
-
-
-
-# Insights Deep Dive
-### Category 1:
-
-* **Main insight 1.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
+(image)
+- Over the 1-year period (from Jan 2021 to Jan 2022), the company generated a **total sales of $469.50 million**, **total gross profit of $182.08 million**, total **12.6 million units sold**, covering **661 different SKUs** across all **6 channels**.
   
-* **Main insight 2.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
+- The **average gross profit margin stood at 10.64%**. This level of gross margin is quite risky and leaves a thin buffer for unforeseable disruptions. Generally this gross profit margin can be acceptable for high-volume, price-competitive industries like  B2B manufacturing or large-scale distributor/retailer.
   
-* **Main insight 3.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
+- The company's sales trend showed **strong seasonality**, with 2 peaks in May and Oct-Dec (likely due to Summer and Winter holidays). The business experienced a mid-year dip around July, suggesting low demand season or operational slowdowns. The sales trend showed an abnormally deep fall in Jan 2022, which was likely due to not having enough data points in that month.
   
-* **Main insight 4.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
+- The **revenue and gross profit margin varied significantly over time** across all channels and SKUs.
 
-[Visualization specific to category 1]
-
-
-### Category 2:
-
-* **Main insight 1.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
+### 2. Channel Performance
+- **AWH was the dominant channel**, accounting for **66.8% of total revenue** with **strong gross margins of 30.6%**, and also showed the highest revenue growth over time. Channel **ADS was the secondary channel**, contributing **27.3%** of total sales and **highest profit margin of 31.6%**. Thus the **sales were concentrated on the 2 key channels.** The remaining 4 channels (ADI, FBA, FBM, LAL) contributed very little to overall sales (less than 5% each).
   
-* **Main insight 2.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
+- Channel FBA and ADI had **negative gross profit margins** (-3.8% and -664.3% respectively) indicating potential issues like high COGS, underpricing or loss/returns issues.
   
-* **Main insight 3.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
+- AWH and ADS were the only channels with significant revenue, and **most of their sales came from A-Class and B-Class items**, respectively. Low-value (C-class) products accounted for only a tiny share of sales in any channel.
+
+### 2. Product Classification 
+- According to ABC Analysis, A-class SKUs are the most impactful, with **nearly 70% of the company's sales came from just 69 A-Class SKUs** (10.64% total SKU count). B-Class items acounted for 20.2% of total sales and 13.62% of total SKUs (90 SKUs). C-Class Items were plenty (76% in quantity) but contributed the least value (10.1% of total sales).
   
-* **Main insight 4.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-
-[Visualization specific to category 2]
-
-
-### Category 3:
-
-* **Main insight 1.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
+- While **belonged to A-Class** and generated significant revenue, **some SKUs showed negative profit margins**, which might be due to promotional campains/new product launching (if occurred in short time), or underpricing/high costs issues (if occured persistently).
   
-* **Main insight 2.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
+- The top 10 representative SKUs generated *high shares of sales (26.8%, $125.8M)*, and showed much *stronger margins* than the overall margin (31.90% - compared to overall margin 10.64%). The list of Top 10 representative items can be found [here](https://docs.google.com/spreadsheets/d/1gzD-cnGmx3zbf4JzzgXMqsRsAYe7YhwfwTNfH3JJKGY/edit?gid=1685500588#gid=1685500588).
+
+---
+
+## Actionable Recommendations
+Based on the uncovered insights, the below recommendations have been provdided:
+
+- With nearly 95% of sales and the highest margins coming from AWH and ADS, management should prioritize supply chain resources & marketing effort for these 2 channels. **Expanding successful channel strategies from AWH and ADS to other channels where possible could help leverage the business values across the supply chain and mitigate risks if disruptions happen to the key channels**. 
+
+- For underperforming or loss-making channels (expecially ADI) **where profit margins were negative, immediately conduct root cause analysis** of pricing, costs, returns, and operational inefficiencies. **Conider corrective pricing action, cost renegotiation, restructuring of these channels, or even discontinue if turnaround is not feasible in order to avoid continued losses.**
+
+- As 70% of revenue concentrated in just 10% of SKUs, **prioritizing A-Class SKUs and optimize the product portfolio is crucial to maximize business value**. Ensure top-performing A-Class products always have healthy inventory, strong promotion, efficient replenishment cycles; use targeted promotions to drive B-Class' volume; and periodically rationalize or eliminate low-performing SKUs to alleviate resource usage.
+
+- Some A-Class SKUs showed negative or very low margins, indicating the urgent need to **review recent pricing, cost changes, and promotional activities for the underperforming high-value products, and take action accordingly to restore profitability of important SKUs**.
+
+- Aligning inventory and marketing planning with seasonal sales trend could boost sales. **Stock more inventory and run appealing promotions in preparation for peak demand seasons (May, Oct-Dec)** in order to maximize sales and avoid loss reveue from stock-outs. **Scale back during expected low seasons (mid-year dip)** to optimize working capital.
+
+- **Leverage data analytics for proactive, data-driven decision making across the supply chain**. Real-time monitoring of margin, sales, and inventory KPIs by channel and SKU monthly, or using dashboard to flag negative margins can help stakeholders to react quickly and mitigate the risks. Historical data also plays a vital role in demand forecasting, allowinging for proactive inventory policies and supply chain alignment ahead of peak periods.
+
+---
+
+## Assumptions and Caveats:
+
+Throughout the analysis, multiple assumptions were made to manage challenges with the data. These assumptions are noted below:
+
+* Assumption 1: The cost of goods sold and revenue data were missing for some SKUs - this was imputated using the averages of the same SKUs. The revenue and cost of goods varied over time, so we took the averages to have the suitable estimation of the missing information.
+    
+* Assumption 2:  Because about 0.36% of the revenue and quantity columns contained non-sensical values (zero), these were exclued from the analysis.
   
-* **Main insight 3.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 4.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-
-[Visualization specific to category 3]
-
-
-### Category 4:
-
-* **Main insight 1.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 2.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 3.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-  
-* **Main insight 4.** More detail about the supporting analysis about this insight, including time frames, quantitative values, and observations about trends.
-
-[Visualization specific to category 4]
-
-
-
-# Recommendations:
-
-Based on the insights and findings above, we would recommend the [stakeholder team] to consider the following: 
-
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
-  
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
-  
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
-  
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
-  
-* Specific observation that is related to a recommended action. **Recommendation or general guidance based on this observation.**
-  
-
-
-# Assumptions and Caveats:
-
-Throughout the analysis, multiple assumptions were made to manage challenges with the data. These assumptions and caveats are noted below:
-
-* Assumption 1 (ex: missing country records were for customers based in the US, and were re-coded to be US citizens)
-  
-* Assumption 1 (ex: data for December 2021 was missing - this was imputed using a combination of historical trends and December 2020 data)
-  
-* Assumption 1 (ex: because 3% of the refund date column contained non-sensical dates, these were excluded from the analysis)
+* Assumption 3:  When creating the list of 10 representative SKUs, I *did not include items with negative gross profit margins* (regardless of which ABC Class they belonged to). Since I did not know the root cause of the negative margins in some A-class items, doing this would help to safely eliminate items with potential problems from the list of representative SKUs.
