@@ -38,7 +38,7 @@ Below is the overview page of the Power BI dashboard. The dashboard can be viewe
   
 - AWH and ADS were the only channels with significant revenue, and **most of their sales came from A-Class and B-Class items**, respectively. Low-value (C-class) products accounted for only a tiny share of sales in any channel.
 
-### 2. Product Classification 
+### 3. Product Classification 
 - According to ABC Analysis, A-class SKUs are the most impactful, with **nearly 70% of the company's sales came from just 69 A-Class SKUs** (10.64% total SKU count). B-Class items acounted for 20.2% of total sales and 13.62% of total SKUs (90 SKUs). C-Class Items were plenty (76% in quantity) but contributed the least value (10.1% of total sales).
   
 - While **belonged to A-Class** and generated significant revenue, **some SKUs showed negative profit margins**, which might be due to promotional campains/new product launching (if occurred in short time), or underpricing/high costs issues (if occured persistently).
