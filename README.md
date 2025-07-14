@@ -362,7 +362,7 @@ See Python code [here](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales
 #### Step 3: For Each Month in the Forecast Horizon (6 months):
 * Calculate the Target Ending SOH = 0.5 × next month’s forecast, or use current month’s forecast for the last period.
  
-    *Ending SOH = Beginning SOH + Order Quantity - Sales*
+    *SOH_End = SOH_Begin + Order_Quantity - Sales*
 
 * Determine the Sales Forecast for each Month.
 
