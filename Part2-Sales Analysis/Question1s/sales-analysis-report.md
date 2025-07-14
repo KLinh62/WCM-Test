@@ -1,4 +1,4 @@
-# Sales Analysis - Summary Report
+# Sales Analysis Report
 
 ## Overview
 This report summarizes key insights from the sales and margin analysis. The findings are based on a detailed review of sales trends, channel and SKU performance, margin analysis and ABC classification. Recommendations are provided for actionable business improvement.
