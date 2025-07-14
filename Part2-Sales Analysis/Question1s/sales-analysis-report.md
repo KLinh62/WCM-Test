@@ -19,12 +19,13 @@ The metadata information can be found [here](https://github.com/KLinh62/WCM-Test
 
 This analysis reveals that business performance was overwhelmingly driven by a small set of channels and products, with leading AWH and ADS channels and a small set of top SKUs contributing the majority of sales and profit. While overall margins were positive (10.64%), persistent losses in certain channels (particularly ADI) and some SKUs presented significant risk and require urgent corrective action. The clear seasonality in demand, peaking sharply in Q2 & Q4, and dipping at mid-year, underscored the importance of aligning inventory, marketing, and operational planning with these cycles to maximize growth and minimize missed opportunities. Stakeholders should focus on key channels (AWH, ADS) and key SKUs, urgently addressing sources of loss, and proactively planning for peak periods to ensure sustainable profitability.
 
-Below is the overview page of the Power BI dashboard. The dashboard can be viewed [here]().
+Below is the overview page of the Power BI dashboard. The dashboard can be viewed [here](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/WCM_Sales_Analysis_Dashboard.pbix).
 
 ## Insights Deep Dive
 ### 1. Overall Sales and Profitability
 
-(image)
+![sales-performance-overview](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/docs/sales_performance_overview.png)
+
 - Over the 1-year period (from Jan 2021 to Jan 2022), the company generated a **total sales of $469.50 million**, **total gross profit of $182.08 million**, total **12.6 million units sold**, covering **661 different SKUs** across all **6 channels**.
   
 - The **average gross profit margin stood at 10.64%**. This level of gross margin is quite risky and leaves a thin buffer for unforeseable disruptions. Generally this gross profit margin can be acceptable for high-volume, price-competitive industries like  B2B manufacturing or large-scale distributor/retailer.
@@ -34,6 +35,7 @@ Below is the overview page of the Power BI dashboard. The dashboard can be viewe
 - The **revenue and gross profit margin varied significantly over time** across all channels and SKUs.
 
 ### 2. Channel Performance
+![channel-performance](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/docs/channel_performance.png)
 - **AWH was the dominant channel**, accounting for **66.8% of total revenue** with **strong gross margins of 30.6%**, and also showed the highest revenue growth over time. Channel **ADS was the secondary channel**, contributing **27.3%** of total sales and **highest profit margin of 31.6%**. Thus the **sales were concentrated on the 2 key channels.** The remaining 4 channels (ADI, FBA, FBM, LAL) contributed very little to overall sales (less than 5% each).
   
 - Channel FBA and ADI had **negative gross profit margins** (-3.8% and -664.3% respectively) indicating potential issues like high COGS, underpricing or loss/returns issues.
@@ -41,6 +43,7 @@ Below is the overview page of the Power BI dashboard. The dashboard can be viewe
 - AWH and ADS were the only channels with significant revenue, and **most of their sales came from A-Class and B-Class items**, respectively. Low-value (C-class) products accounted for only a tiny share of sales in any channel.
 
 ### 3. Product Classification 
+![product-classification](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/docs/product_classification.png)
 - According to ABC Analysis, A-class SKUs are the most impactful, with **nearly 70% of the company's sales came from just 69 A-Class SKUs** (10.64% total SKU count). B-Class items acounted for 20.2% of total sales and 13.62% of total SKUs (90 SKUs). C-Class Items were plenty (76% in quantity) but contributed the least value (10.1% of total sales).
   
 - While **belonged to A-Class** and generated significant revenue, **some SKUs showed negative profit margins**, which might be due to promotional campains/new product launching (if occurred in short time), or underpricing/high costs issues (if occured persistently).
