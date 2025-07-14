@@ -248,8 +248,8 @@ Classical Decomposition gives the **lowest MSE and MAPE**, thus it's the best fo
 ### Step 1: Clean and Transform Data
 - Load data into Power BI.
 - Clean and transform data using Power Query.
-- 
-[Issue Log](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/docs/data-cleaning-transformation.png)
+  
+![Issue Log](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/docs/data-cleaning-transformation.png)
 
 - For issues 5 and 6, create new `Price_Ref` and `COGS_Ref` to look up the missing price and COGS values for each SKU. (Hide the lookup tables in Power BI.)
 
