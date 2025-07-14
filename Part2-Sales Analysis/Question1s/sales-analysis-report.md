@@ -19,7 +19,7 @@ The metadata information can be found [here](https://github.com/KLinh62/WCM-Test
 
 This analysis reveals that business performance was overwhelmingly driven by a small set of channels and products, with leading AWH and ADS channels and a small set of top SKUs contributing the majority of sales and profit. While overall margins were positive (10.64%), persistent losses in certain channels (particularly ADI) and some SKUs presented significant risk and require urgent corrective action. The clear seasonality in demand, peaking sharply in Q2 & Q4, and dipping at mid-year, underscored the importance of aligning inventory, marketing, and operational planning with these cycles to maximize growth and minimize missed opportunities. Stakeholders should focus on key channels (AWH, ADS) and key SKUs, urgently addressing sources of loss, and proactively planning for peak periods to ensure sustainable profitability.
 
-Below is the overview page of the Power BI dashboard. **The dashboard can be viewed [here](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/WCM_Sales_Analysis_Dashboard.pbix).**
+Below is the overview page of the Power BI dashboard. **The dashboard can be downloaded [here](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/WCM_Sales_Analysis_Dashboard.pbix).**
 
 ## Insights Deep Dive
 ### 1. Overall Sales and Profitability
