@@ -182,7 +182,7 @@ See CPLEX code [here](https://github.com/KLinh62/WCM-Test/blob/main/Part1_Supply
 - This means **P4 alone is processing all 1000 shoes/min**, and earlier stages are bypassed, as allowed by the flexible network rule.
 
 - f = [0, 0, 16.667, 0, 0, 0] means that all flows go from **P1 to P4** (corresponding to E = <1,4>).
-- 
+
 **Conclusion:** The new network design is **P1 → P4** (bypassing P2 and P3). This makes sense because the model is allowed to bypass stages if it minimizes stations, and P4 also has the lowest processing time (7s) after P1 (5s).
 
 ---
@@ -220,7 +220,7 @@ Link to worksheet Holt-Winter's Exponential Smoothing Method can be found [here]
 This method is suitable for data that exhibits both trend and seasonality. The Holt-Winters exponential smoothing method splits the observations into 3 components: trend, season, and random error.
 
 **Process:**
-1. Initialize the level, trend, and seasonal indices for the first year: \( L_{12}, b_{12}, S_1 \) to \( S_{12} \).
+1. Initialize the level, trend, and seasonal indices for the first year: $\( L_{12}, b_{12}, S_1 $\) to $\( S_{12} $\).
 2. Calculate the level, trend, and seasonal indices for each month.
 3. Calculate forecasts for year 6.
 
@@ -260,7 +260,7 @@ Classical Decomposition gives the **lowest MSE and MAPE**, thus it's the best fo
     - Total Quantity
     - Total SKUs
     - Gross Profit = Revenue - COGS
-    - Gross Profit Margin = Total Gross Profit / Total Revenue
+    - Gross Profit Margin = Gross Profit / Total Revenue
 
 ### Step 3: Define Key Business Questions
 - **Top Performing Channels:** Which channel drives the most revenue/profit? Are there underperforming channels?
