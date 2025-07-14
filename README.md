@@ -244,7 +244,7 @@ Classical Decomposition gives the **lowest MSE and MAPE**, thus it's the best fo
 
 ## Question 1. Summary Report of Key Insights About Sales
 
-### Step 1: Clean and Transform Data
+#### Step 1: Clean and Transform Data
 - Load data into Power BI.
 - Clean and transform data using Power Query.
   
@@ -252,7 +252,7 @@ Classical Decomposition gives the **lowest MSE and MAPE**, thus it's the best fo
 
 - For issues 5 and 6, create new `Price_Ref` and `COGS_Ref` to look up the missing price and COGS values for each SKU. (Hide the lookup tables in Power BI.)
 
-### Step 2: Define Key Dimensions and Calculate Key Metrics
+#### Step 2: Define Key Dimensions and Calculate Key Metrics
 - **Key Dimensions:** channel, SKU, ship_date
 - **Key Metrics:**
     - % of Revenue and % of Profit
@@ -262,7 +262,7 @@ Classical Decomposition gives the **lowest MSE and MAPE**, thus it's the best fo
     - Gross Profit = Revenue - COGS
     - Gross Profit Margin = Gross Profit / Total Revenue
 
-### Step 3: Define Key Business Questions
+#### Step 3: Define Key Business Questions
 - **Top Performing Channels:** Which channel drives the most revenue/profit? Are there underperforming channels?
 - **Product Contribution (SKUs):** Which SKUs contribute most to revenue and profit? Are there SKUs with low revenue but high margin, or vice versa?
 - **Growth & Trends:** Is revenue/profit growing (MoM, YoY)? Are there seasonal peaks or dips?
@@ -270,7 +270,7 @@ Classical Decomposition gives the **lowest MSE and MAPE**, thus it's the best fo
 - **Sales Mix:** What % of sales come from top 10 SKUs? Does the 80/20 rule apply?
 - **Channel Priority:** Prioritize channels with high volume, high margin, or strong growth. Recommend strategies for lagging channels.
 
-### Step 4: Preparation Step: 
+#### Step 4: Preparation Step: 
 Create new columns, measures, reference tables, and modify the schema.
 
 - Create new table `Revenue_By_Sku` to calculate total revenue for each SKU.
@@ -284,9 +284,9 @@ Create new columns, measures, reference tables, and modify the schema.
 
 - In `Sales_Data`, create new cleaned/calculated columns as necessary: `calc_price`, `calc_revenue`, `gross_profit`.
 
-**Step 5: Build Power BI Reports and Extract Business Insights**
+#### Step 5: Build Power BI Reports and Extract Business Insights
 
-**Step 6: Write a Summary Report on Key Insights About Sales.**  
+#### Step 6: Write a Summary Report on Key Insights About Sales.**  
 See full report [here](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/sales-analysis-report.md).
 
 ---
