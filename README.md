@@ -320,7 +320,9 @@ We filter out a representative list of top 10 key SKUs that satisfy the criteria
 
 ![metrics-top10-2](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/docs/metrics-top10-2.png)
 
-## 3. Provide the Sales Forecast for the Upcoming 6 Months for the Top 10 SKUs
+---
+
+## Question 3. Provide the Sales Forecast for the Upcoming 6 Months for the Top 10 SKUs
 
 - The sales trend for each SKU showed high volatility but no obvious trend across the whole period (data covers only 1 year).
 - **Method chosen:** 3-Month Moving Average (3MA), suitable for highly volatile series.
@@ -346,7 +348,7 @@ See Python code [here](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales
 
 ---
 
-## 4. Create the Ordering Plan for Top 10 SKUs
+## Question 4. Create the Ordering Plan for Top 10 SKUs
 
 - **Initial SOH** = 0.5 × First month’s forecast
 - **Forecast period:** Next 6 months
