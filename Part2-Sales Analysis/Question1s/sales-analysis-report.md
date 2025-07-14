@@ -7,9 +7,9 @@ This report summarizes key insights from the sales and margin analysis. The find
 ## Data Structure & Initial Checks
 The dataset consist of 01 table called 'Sales_Data' with a total row count of 48,363 records. The table consists of 7 column: `shipped_date`,  `sku`,	`channel`,	`qty`,	`revenue`,	`cost of good sold`, and	`MOQ order`.
 
-The dataset can be downloaded [here](https://github.com/KLinh62/WCM-Test/tree/main/Part2-Sales%20Analysis/data).
+The dataset can be downloaded [here](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/data/WCM_Sales%20Data.csv).
 
-The issue log of data cleaning and transformation can be found [here](https://docs.google.com/spreadsheets/d/1gzD-cnGmx3zbf4JzzgXMqsRsAYe7YhwfwTNfH3JJKGY/edit?gid=1685500588#gid=1685500588).
+The issue log of data cleaning and transformation can be found [here](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/docs/data-cleaning-transformation.png).
 
 The metadata information can be found [here](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/docs/data-dictionary.md).
 
