@@ -368,11 +368,13 @@ See Python code [here](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales
   - For a 25-day lead time (~0.83 months), to cover sales in Month (t+1), we must place the order in Month t.
   
   - If the order arrives after the 6th period, use the current period’s forecast:
+    
   *Order_Quantity = max(target_SOH_next + Sales - SOH_Begin, 0)*
 
 * Record values for the list `order_plan`.
 
 * Update SOH for the Next Month:
+  
   *SOH_Begin_next = SOH_End = SOH_Begin + Order_Quantity - Sales*
 
 #### Step 4: Store results in a DataFrame for reporting or further analysis.
