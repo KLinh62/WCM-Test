@@ -101,8 +101,7 @@ From the time-trace table:
 ### Question 3
 
 #### Let:
-
-- $\ N = \{1,2,3,4\} \$: the set of stations
+- N = { 1,2,3,4 }: the set of processes
 - $\ E \subseteq N \times N \$: the subset of all possible directed arcs (allowed non-sequential connections between stations)
 - $\ P_i \$: processing time at station $\ i \$
 - $\ T \$: required system throughput ( = 16.6 products/sec)
@@ -111,8 +110,8 @@ From the time-trace table:
 #### Decision Variables
 
 - $\ S_i \in \mathbb{Z}_+ \$: number of parallel stations at process i (a positive integer)
-- $\ x_{ij} \in $\{ 0,1 \} \$ \$: binary variable; 1 if there is a connection from process i to j, 0 otherwise
-- $\ f_{ij} \in \mathbb{R}_+ \$: flow rate/throughput rate (products/sec) from process i to station j
+- $\ x_{ij} \in \ \${0,1}: binary variable; 1 if there is a connection from process i to j, 0 otherwise
+- $\ f_{ij} \in \mathbb{R}_+ \$: flow rate/throughput rate (products/sec) from process i to j
 
 
 #### Objective
@@ -128,14 +127,14 @@ $$
 
 * **Throughput Capacity Constraint:**
 
-Each station \( i \) must support the incoming flow from all other nodes in the network.
+Each process \( i \) must support the incoming flow from all other nodes in the network.
 
 $$
 f_i^* \leq S_i P_i,\quad \forall i \in N
 $$
 
 Where:  
-$\ f_i^* = \sum_{j:\, (j,i) \in E} f_{ji} \$: total input flow to node i.
+$\ f_i^* = \sum_{j:\, (j,i) \in E} f_{ji} \$: total input flow to process i.
 
 * **Flow Conservation:**
 Net flow must be preserved (except for source and sink).
@@ -159,13 +158,13 @@ $$
 \sum_{j: (j,4) \in E} f_{j4} = T
 $$
 
-*WIP Constraint:* To keep WIP < 10, enforce rate balance + buffer ⇒ ensure output from upstream doesn't flood downstream.
+* **WIP Constraint:** To keep WIP < 10, enforce rate balance + buffer ⇒ ensure output from upstream doesn't flood downstream.
 
 $$
 \frac{f_{j}}{S_j / P_j} - \frac{f_{ij}}{S_i / P_i} \leq \frac{W}{60} \qquad \forall (i, j) \in E
 $$
 
-*Binary Activation of Arcs:* Let $M$ be the dummy variable (M very large).
+* **Binary Activation of Arcs:** Let $M$ be the dummy variable (M very large).
 
 $$
 f_{ij} \leq M \cdot x_{ij} \qquad \forall (i, j) \in E
