@@ -3,6 +3,8 @@
 ## Overview
 This report summarizes key insights from the sales and margin analysis. The findings are based on a detailed review of sales trends, channel and SKU performance, margin analysis and ABC classification. Recommendations are provided for actionable business improvement.
 
+[Dashboard link](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/WCM_Sales_Analysis_Dashboard.pbix)
+
 ---
 ## Data Structure & Initial Cleaning 
 The dataset consist of 01 table called 'Sales_Data' with a total row count of 48,363 records. The table consists of 7 column: `shipped_date`,  `sku`,	`channel`,	`qty`,	`revenue`,	`cost of good sold`, and	`MOQ order`.
