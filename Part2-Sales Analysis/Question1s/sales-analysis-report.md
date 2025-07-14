@@ -11,6 +11,8 @@ The dataset can be downloaded [here](https://github.com/KLinh62/WCM-Test/tree/ma
 
 The issue log of data cleaning and transformation can be found [here](https://docs.google.com/spreadsheets/d/1gzD-cnGmx3zbf4JzzgXMqsRsAYe7YhwfwTNfH3JJKGY/edit?gid=1685500588#gid=1685500588).
 
+The metadata information can be found [here](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/docs/data-dictionary.md).
+
 ---
 ## Executive Summary
 #### Overview of Findings
@@ -43,7 +45,7 @@ Below is the overview page of the Power BI dashboard. The dashboard can be viewe
   
 - While **belonged to A-Class** and generated significant revenue, **some SKUs showed negative profit margins**, which might be due to promotional campains/new product launching (if occurred in short time), or underpricing/high costs issues (if occured persistently).
   
-- The top 10 representative SKUs generated *high shares of sales (26.8%, $125.8M)*, and showed much *stronger margins* than the overall margin (31.90% - compared to overall margin 10.64%). The list of Top 10 representative items can be found [here](https://docs.google.com/spreadsheets/d/1gzD-cnGmx3zbf4JzzgXMqsRsAYe7YhwfwTNfH3JJKGY/edit?gid=1685500588#gid=1685500588).
+- The top 10 representative SKUs generated *high shares of sales (26.8%, $125.8M)*, and showed much *stronger margins* than the overall margin (31.90% - compared to overall margin 10.64%). The list of Top 10 representative items can be found [here](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question1s/docs/top-10-skus.csv).
 
 ---
 
@@ -70,6 +72,8 @@ Throughout the analysis, multiple assumptions were made to manage challenges wit
 
 * Assumption 1: The cost of goods sold and revenue data were missing for some SKUs - this was imputated using the averages of the same SKUs. The revenue and cost of goods varied over time, so we took the averages to have the suitable estimation of the missing information.
     
-* Assumption 2:  Because about 0.36% of the revenue and quantity columns contained non-sensical values (zero), these were exclued from the analysis.
+* Assumption 2: Because about 0.36% of the revenue and quantity columns contained non-sensical values (zero), these were exclued from the analysis.
   
-* Assumption 3:  When creating the list of 10 representative SKUs, I *did not include items with negative gross profit margins* (regardless of which ABC Class they belonged to). Since I did not know the root cause of the negative margins in some A-class items, doing this would help to safely eliminate items with potential problems from the list of representative SKUs.
+* Assumption 3: The list of 10 representative SKUs was selected based on satisfying 3 criteria: i) belonged to A-Class, ii) topped in sales contribution, and iii) had positive profit margins.
+  
+* Assumption 4:  When creating the list of 10 representative SKUs, I *did not include items with negative gross profit margins* (regardless of which ABC Class they belonged to). Since I did not know the root cause of the negative margins in some A-class items, doing this would help to safely eliminate items with potential problems from the list of representative SKUs.
