@@ -324,17 +324,23 @@ We filter out a representative list of top 10 key SKUs that satisfy the criteria
 - **Method chosen:** 3-Month Moving Average (3MA), suitable for highly volatile series.
 
 **Process:**
-1. Load data into pandas, reshape to long format, and add a truncated `date` column.
-2. **Forecasting with 3MA:**
-    - Set up subplots for plotting all SKUs in a 2-column × 5-row grid.
-    - Loop through SKUs: skip if <3 data points or all zeros.
-    - Initialize the "recent" list with the last 3 actual sales.
-    - Forecast next 6 months using rolling 3MA.
-    - Create future dates for the 6 forecast months.
-    - Store forecasts in results and plot historical sales and forecasts for each SKU in its subplot.
-3. Save results to DataFrame and export to csv files (both long and wide format).
+#### Step 1. Load data into pandas, reshape to long format, and add a truncated `date` column.
+#### Step 2. Forecasting with 3MA:
+- Set up subplots for plotting all SKUs in a 2-column × 5-row grid.
+    
+- Loop through SKUs: skip if <3 data points or all zeros.
+    
+- Initialize the "recent" list with the last 3 actual sales.
+    
+- Forecast next 6 months using rolling 3MA.
+    
+- Create future dates for the 6 forecast months.
+    
+- Store forecasts in results and plot historical sales and forecasts for each SKU in its subplot.
+    
+#### Step 4. Save results to DataFrame and export to csv files (both long and wide format).
 
-*Python code and results attached.*
+See Python code [here](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question3/Forecasting.ipynb).
 
 ---
 
@@ -346,21 +352,30 @@ We filter out a representative list of top 10 key SKUs that satisfy the criteria
 - **Objective:** Never go out of stock and keep ending inventory level ≈ 0.5 month’s forecast.
 
 ### Process:
-1. **Initialize Parameters:** Lead Time and Target SOH level.
-2. **For Each SKU:**
-    - Get the 6-month forecasted sales.
-    - Set initial SOH as 0.5 × first month’s forecasted sales.
-3. **For Each Month in the Forecast Horizon (6 months):**
-    - Calculate the target ending SOH (0.5 × next month’s forecast, or current month for the previous period).
-    - \( \text{Ending SOH} = \text{Beginning SOH} + \text{Order Quantity} - \text{Sales} \)
-    - Determine the sales forecast for the month.
-    - **Order Quantity:** For a 25-day lead time (~0.83 months), to cover sales in Month t+1, order must be placed in Month t.
-    - For months where the order arrives after the 6th period, just use the current period.
-    - \( \text{Order Quantity} = \max(\text{target SOH}_{\text{next}} + \text{Sales} - \text{SOH}_{\text{Begin}},\ 0) \)
-    - Record values to list `order_plan`
-    - Update SOH for the next month:
-      \( \text{SOH}_{\text{Begin, next}} = \text{SOH}_{\text{End}} = \text{SOH}_{\text{Begin}} + \text{Order Quantity} - \text{Sales} \)
-4. **Store results** in a DataFrame for reporting or further analysis.
+#### Step 1. Initialize Parameters: Lead Time and Target SOH level.
+#### Step 2. For Each SKU:
+- Get the 6-month forecasted sales.
+- Set initial SOH as 0.5 × first month’s forecasted sales.
+#### Step 3: For Each Month in the Forecast Horizon (6 months):
+* Calculate the Target Ending SOH = 0.5 × next month’s forecast, or use current month’s forecast for the last period.
+ 
+    *Ending SOH = Beginning SOH + Order Quantity - Sales*
 
-*Python code and results attached.*
+* Determine the Sales Forecast for each Month.
+
+* Calculate Order Quantity:
+    
+  - For a 25-day lead time (~0.83 months), to cover sales in Month (t+1), we must place the order in Month t.
+  
+  - If the order arrives after the 6th period, use the current period’s forecast:
+  *Order_Quantity = max(target_SOH_next + Sales - SOH_Begin, 0)*
+
+* Record values for the list `order_plan`.
+
+* Update SOH for the Next Month:
+  *SOH_Begin_next = SOH_End = SOH_Begin + Order_Quantity - Sales*
+
+#### Step 4: Store results in a DataFrame for reporting or further analysis.
+
+See Python code [here](https://github.com/KLinh62/WCM-Test/blob/main/Part2-Sales%20Analysis/Question4/Ordering%20Plan.ipynb).
 
