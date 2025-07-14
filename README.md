@@ -189,6 +189,7 @@ See CPLEX code [here](https://github.com/KLinh62/WCM-Test/blob/main/Part1_Supply
 ## Case No. 2
 
 The data shows clear **seasonality within each year** — especially higher demand in winter months (October–December) and also a steady upward trend.
+![historical-sales](https://github.com/KLinh62/WCM-Test/blob/main/Part1_Supply%20Chain%20Case%20Study/historical-sales-plot.png)
 
 ### Methods Used
 
