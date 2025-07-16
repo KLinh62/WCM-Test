@@ -158,7 +158,7 @@ $$
 \sum_{j: (j,4) \in E} f_{j4} = T
 $$
 
-* **WIP Constraint:** To keep WIP < 10, enforce rate balance + buffer ⇒ ensure output from upstream doesn't flood downstream.
+* **WIP Constraint:** To keep WIP <= 10, enforce rate balance + buffer ⇒ ensure output from upstream doesn't flood downstream.
 
 $$
 \frac{f_{j}}{S_j / P_j} - \frac{f_{ij}}{S_i / P_i} \leq \frac{W}{60} \qquad \forall (i, j) \in E
