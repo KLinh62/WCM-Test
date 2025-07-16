@@ -1,47 +1,56 @@
 // -------- PARAMETERS --------
 int N = 4;
-range Stations = 1..N;
-float P[Stations] = [5, 10, 8, 7];         // Processing times
-float T = 1000 / 60.0;                     // Target throughput rate ≈ 16.67 products/sec
+range Proc = 1..N;
+
+float P[Proc] = [5, 10, 8, 7];         // Processing times
+float T = 1000 / 60.0;                     // Target throughput rate ≈ 16.67
 float W = 10;                              // Max WIP allowed before any stage
-float M = 1000;                            // Dummy M constant for arc activation
+float BigM = 1000;                            // Big M constant for arc activation
 
 // -------- TUPLE & SETS --------
 tuple Edge {
- int from_node;
- int to_node;
+  int from_node;
+  int to_node;
 };
+
 {Edge} E = {
- <1,2>, <1,3>, <1,4>,
- <2,3>, <2,4>,
- <3,4>
+  <1,2>, <1,3>, <1,4>,
+  <2,3>, <2,4>,
+  <3,4>
 };
 
 // -------- DECISION VARIABLES --------
-dvar int+ S[Stations];             // Number of parallel stations per process
-dvar boolean x[E];                // Whether connection (i→j) is active
-dvar float+ f[E];                 // Flow from process i to j
+dvar int+ S[Proc];             // Number of parallel stations per process
+dvar boolean x[e in E];                // Whether connection (i→j) is active
+dvar float+ f[e in E];                 // Flow from process i to j
+
+// -------- HELPER EXPRESSION----------
+	// total incoming flow into process j
+dexpr float TotalInFlow[j in Proc] =
+  sum(e in E : e.to == j) f[e];
 
 // -------- OBJECTIVE --------
-minimize sum(i in Stations) S[i];
+minimize sum(i in Proc) S[i];
 
 // -------- CONSTRAINTS --------
 subject to {
- // Capacity constraint
- forall (j in Stations)
-   sum(e in E : e.to_node == j) f[e] <= S[j] / P[j];
- // Source output
- sum(e in E : e.from_node == 1) f[e] == T;
- // Sink input
- sum(e in E : e.to_node == 4) f[e] == T;
- // Flow conservation for internal nodes
- forall (k in Stations : k != 1 && k != 4)
-   sum(e in E : e.from_node == k) f[e] == sum(e in E : e.to_node == k) f[e];
- // WIP constraint surrogate: limit flow to downstream capacity
- forall (e in E)
-   f[e] <= S[e.to_node] / P[e.to_node];
- // Flow only allowed if arc is active
- forall (e in E)
-   f[e] <= M * x[e];
-}
 
+  // Capacity constraint: each process must support its incoming flow forall(j in Proc)
+  forall (j in Proc)
+    sum(e in E : e.to == j) f[e] <= S[j] / P[j];
+
+  // Flow requirements: net flow = +T at source, -T at sink, 0 otherwise
+  forall(i in Proc : i != 1 && i != 4)
+    sum(e in E : e.from == i) f[e]
+    == sum(e in E : e.to   == i) f[e];
+
+  // WIP constraint: limit accumulation between i → j
+  //  so that in any 60s window the WIP ≤ 10 units
+ forall(e in E)
+    (TotalInFlow[e.to] / (S[e.to] / P[e.to])) 
+    	- (f[e] / (S[e.from] / P[e.from])) <= W / 60.0;
+  
+  // Flow only allowed if arc is active
+  forall (e in E)
+    f[e] <= BigM * x[e];
+}
