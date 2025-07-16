@@ -130,11 +130,11 @@ $$
 Each process \( i \) must support the incoming flow from all other nodes in the network.
 
 $$
-f_*i \leq S_i P_i,\quad \forall i \in N
+f_*i \leq S_i \/ P_i,\quad \forall i \in N
 $$
 
 Where:  
-$\ f_*i = \sum_{j:\, (j,i) \in E} f_{ji} \$: total input flow to process i.
+$\ f_*i = \sum_{j:\, (j,i) \in E} f_{ij} \$: total input flow to process i.
 
 * **Flow Conservation:**
 Net flow must be preserved (except for source and sink).
