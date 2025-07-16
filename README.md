@@ -102,7 +102,7 @@ From the time-trace table:
 
 #### Let:
 - N = { 1,2,3,4 }: the set of processes
-- $\ E \subseteq N \times N \$: the subset of all possible directed arcs (allowed non-sequential connections between stations)
+- $\ E \subseteq N \times N \$: the subset of all possible directed arcs (allowed non-sequential connections between processes)
 - $\ P_i \$: processing time at station $\ i \$
 - $\ T \$: required system throughput ( = 16.6 products/sec)
 - $\ W \$: max allowed WIP before any station \( = 10 \)
