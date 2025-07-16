@@ -27,7 +27,7 @@ dvar float+ f[e in E];                 // Flow from process i to j
 // -------- HELPER EXPRESSION----------
 	// total incoming flow into process j
 dexpr float TotalInFlow[j in Proc] =
-  sum(e in E : e.to == j) f[e];
+  sum(e in E : e.to_node == j) f[e];
 
 // -------- OBJECTIVE --------
 minimize sum(i in Proc) S[i];
@@ -37,18 +37,18 @@ subject to {
 
   // Capacity constraint: each process must support its incoming flow forall(j in Proc)
   forall (j in Proc)
-    sum(e in E : e.to == j) f[e] <= S[j] / P[j];
+    sum(e in E : e.to_node == j) f[e] <= S[j] / P[j];
 
   // Flow requirements: net flow = +T at source, -T at sink, 0 otherwise
   forall(i in Proc : i != 1 && i != 4)
-    sum(e in E : e.from == i) f[e]
-    == sum(e in E : e.to   == i) f[e];
+    sum(e in E : e.from_node == i) f[e]
+    == sum(e in E : e.to_node == i) f[e];
 
   // WIP constraint: limit accumulation between i → j
   //  so that in any 60s window the WIP ≤ 10 units
  forall(e in E)
-    (TotalInFlow[e.to] / (S[e.to] / P[e.to])) 
-    	- (f[e] / (S[e.from] / P[e.from])) <= W / 60.0;
+    (TotalInFlow[e.to_node] / (S[e.to_node] / P[e.to_node])) 
+    	- (f[e] / (S[e.from_node] / P[e.from_node])) <= W / 60.0;
   
   // Flow only allowed if arc is active
   forall (e in E)
