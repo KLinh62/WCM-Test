@@ -230,13 +230,13 @@ This method is suitable for data that exhibits both trend and seasonality. The H
 
 | Metric | Naive | Classical Decomposition | Holt-Winter's |
 |--------|-------|------------------------|---------------|
-| **Bias** | -729.17 | 608.03 | 165.12 |
-| **MAD** | 1,366.67 | 2,035.60 | 1,190.48 |
-| **MAPE** | 28.97% | 25.01% | 29.77% |
-| **MSE** | 5,145,833.33 | 2,986,575.25 | 3,717,682.72 |
+| **Bias** | -729.17 | 114.41 | 165.12 |
+| **MAD** | 1,366.67 | 1750.54 | 1,190.48 |
+| **MAPE** | 28.97% | 22.49% | 29.77% |
+| **MSE** | 5,145,833.33 | 2,448,590.28 | 3,717,682.72 |
 
 **Conclusion:**  
-Classical Decomposition gives the **lowest MSE and MAPE**, thus it's the best forecasting method among the three methods.
+Classical Decomposition gives the **lowest MSE, MAPE and Bias**, thus it's the best forecasting method among the three methods.
 
 ---
 
