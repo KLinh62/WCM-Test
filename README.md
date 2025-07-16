@@ -175,7 +175,7 @@ See CPLEX code [here](https://github.com/KLinh62/WCM-Test/blob/main/Part1_Supply
 
 #### Result:
 
-![cplex-results](https://github.com/KLinh62/WCM-Test/blob/main/Part1_Supply%20Chain%20Case%20Study/cplex-results.png)
+![cplex-results](https://github.com/KLinh62/WCM-Test/blob/main/Part1_Supply%20Chain%20Case%20Study/cplex-solutions.png)
 
 - The new network contains **117 stations** (working machines) across all processes, all assigned to **P4** (because S = [0, 0, 0, 117])
 - No stations are assigned to P2 or P3.
