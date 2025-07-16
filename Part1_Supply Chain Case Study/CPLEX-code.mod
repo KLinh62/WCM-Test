@@ -5,7 +5,7 @@ range Proc = 1..N;
 float P[Proc] = [5, 10, 8, 7];         // Processing times
 float T = 1000 / 60.0;                     // Target throughput rate ≈ 16.67
 float W = 10;                              // Max WIP allowed before any stage
-float BigM = 1000;                            // Big M constant for arc activation
+float M = 1000;                            // Big M constant for arc activation
 
 // -------- TUPLE & SETS --------
 tuple Edge {
@@ -52,5 +52,5 @@ subject to {
   
   // Flow only allowed if arc is active
   forall (e in E)
-    f[e] <= BigM * x[e];
+    f[e] <= M * x[e];
 }
